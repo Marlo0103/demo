@@ -1,3 +1,5 @@
+let dy = 0
+
 function handleKeyPress(ev) {
     if (ev.code === "Space"){
     const player = document.querySelector("#player")
@@ -11,9 +13,12 @@ function handleKeyPress(ev) {
 }
 
 function gameloop(){
+//update game status
+dy = Math.min(dy + 0.05, 1)
+
     const player = document.querySelector("#player")
     let posY = parseInt(player.getAttribute("cy"))
-    player.setAttribute("cy", posY+1)
+    player.setAttribute("cy", posY+dy)
     //Loop forever
     window.requestAnimationFrame(gameloop);
 }
