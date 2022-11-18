@@ -15,6 +15,18 @@ function handleKeyPress(ev) {
     dx = -1
 }
 }
+function handleKeyRelease(ev) {
+if (ev.code === "ArrowRight") {
+    dx=0
+} else if (ev.code === "ArrowLeft") {
+    dx =0
+}
+
+}
+
+
+
+
 
 function gameloop(){
 //update game status
@@ -38,3 +50,4 @@ if (posY > 100 - r -dy ){
 }
 gameloop()
 window.onkeydown = handleKeyPress   
+window.onkeyup = handleKeyRelease  
