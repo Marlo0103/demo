@@ -17,7 +17,12 @@ dy = Math.min(dy + 0.05, 1)
 
     const player = document.querySelector("#player")
     let posY = parseFloat(player.getAttribute("cy"))
-    player.setAttribute("cy", posY+dy)
+let r = parseInt(player.getAttribute("r"))
+if (posY > 100 - r -dy ){
+    dy = 0
+}
+
+    player.setAttribute("cy", posY+dy);
     //Loop forever
     window.requestAnimationFrame(gameloop);
 }
