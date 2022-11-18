@@ -9,6 +9,10 @@ function handleKeyPress(ev) {
     player.setAttribute("fill", "red")
 } else if (ev.key === "g") {
     player.setAttribute("fill", "green");
+} else if (ev.code === "ArrowRight") {
+    dx = 1
+} else if (ev.code === "ArrowLeft") {
+    dx = -1
 }
 }
 
