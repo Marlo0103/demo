@@ -1,4 +1,5 @@
 let dy = 0
+let dx = 0
 
 function handleKeyPress(ev) {
     if (ev.code === "Space"){
@@ -23,6 +24,11 @@ if (posY > 100 - r -dy ){
 }
 
     player.setAttribute("cy", posY+dy);
+
+    let posX = parseFloat(player.getAttribute("cx"));
+    player.setAttribute("cx", posX + dx );
+    
+
     //Loop forever
     window.requestAnimationFrame(gameloop);
 }
